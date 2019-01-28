@@ -33,10 +33,17 @@ print("--------------")
 print("THERE ARE " + str(number_of_products) + " PRODUCTS:")
 print("--------------")
 
-for p in products:
 
+#sort function
+
+def sort_by_name(any_product):
+    return any_product["name"]
+
+sorted_products = sorted(products,key=sort_by_name)
+
+#print outcomes
+for p in sorted_products:
     product_price = "{0:.2f}".format(p["price"])
-
     print(" + " + p["name"] + " ($" + str(product_price) + ")")
 
 
