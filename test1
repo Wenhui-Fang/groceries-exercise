@@ -27,7 +27,6 @@ print(products)
 
 # TODO: write some Python code here to produce the desired output
 
-
 #PART I
 number_of_products = len(products)
 
@@ -42,7 +41,7 @@ def sort_by_name(any_product):
 
 sorted_products = sorted(products,key=sort_by_name)
 
-#print outcomes
+#print outcomes for part I
 for p in sorted_products:
     product_price = "{0:.2f}".format(p["price"])
     print(" + " + p["name"] + " ($" + str(product_price) + ")")
@@ -51,6 +50,7 @@ for p in sorted_products:
 #PART II
 departments = []
 
+#count unique departments
 for p in products:
     if p["department"] not in departments:
         departments.append(p["department"])
@@ -64,7 +64,11 @@ print("--------------")
 departments.sort()
 
 for d in departments:
-    print(d.title())
+    product_count= [p for p in products if p["department"]== d]
+    product_count = len(product_count)
+    print(" + " + d.title() + " (" + str(product_count) + " products)")
+
+
 
 # --------------
 # THERE ARE 10 DEPARTMENTS:
