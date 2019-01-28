@@ -46,7 +46,6 @@ for p in sorted_products:
     product_price = "{0:.2f}".format(p["price"])
     print(" + " + p["name"] + " ($" + str(product_price) + ")")
 
-
 #PART II
 departments = []
 
@@ -61,13 +60,14 @@ print("--------------")
 print("THERE ARE " + str(department_count) + " DEPARTMENTS:")
 print("--------------")
 
+#sort departments
 departments.sort()
 
 for d in departments:
     product_count= [p for p in products if p["department"]== d]
     product_count = len(product_count)
 
-
+#output the right label
     if product_count > 1:
         label = " products"
     else:
